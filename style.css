@@ -21,6 +21,10 @@ img {
   border-bottom: 1px solid white;
 }
 
+.main-title:not(.home) {
+  font-size: 2em;
+}
+
 .hover-highlight li {
   padding: 0.5em;
   border-radius: 0.25rem;

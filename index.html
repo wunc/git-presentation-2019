@@ -15,7 +15,7 @@
 
   <div id="root" class="mt-5" @keyup.right="gotoNextSection" @keyup.left="gotoPreviousSection" tabindex="0">
 
-    <h1 class="main-title display-3">
+    <h1 class="main-title display-3" :class="{ 'home': isCurrentSection(0) }">
       Source Control with <i class="fab fa-git-square"></i><span class="sr-only">Git</span>
     </h1>
 
