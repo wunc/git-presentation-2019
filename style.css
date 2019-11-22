@@ -19,6 +19,7 @@ img {
 .main-title {
   text-align: center;
   border-bottom: 1px solid white;
+  transition: font-size 1s;
 }
 
 .main-title:not(.home) {
