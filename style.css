@@ -1,0 +1,79 @@
+body {
+  color: #fff;
+  background-color: #212529;
+}
+
+a {
+  color: #4ba2ff;
+}
+
+img {
+  max-width: 100%;
+}
+
+#root {
+  outline: 0;
+  margin-bottom: 5em;
+}
+
+.main-title {
+  text-align: center;
+  border-bottom: 1px solid white;
+}
+
+.hover-highlight li {
+  padding: 0.5em;
+  border-radius: 0.25rem;
+}
+.hover-highlight li:hover {
+  background-color: #007bff;
+}
+
+.jumbotron {
+  background-size: cover;
+  background-position: center;
+}
+
+.clippy {
+  max-width: 50%;
+  margin: 3em auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clippy-text, .not-clippy-text {
+  position: relative;
+  padding: 2em;
+  color: #212529;
+  background-color: cornsilk;
+  border-radius: .4em;
+  margin-bottom: 1em;
+}
+
+.clippy-text:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 35%;
+	width: 0;
+	height: 0;
+	border: 1.719em solid transparent;
+	border-top-color: cornsilk;
+	border-bottom: 0;
+	border-right: 0;
+	margin-left: -0.859em;
+	margin-bottom: -1.719em;
+}
+
+.clippy-text img {
+  display: block;
+  margin: 2em auto;
+  max-width: calc(100% - 4em);
+}
+
+.clippy-image {
+  width: 15em;
+  height: auto;
+}
+

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Source Control with Git</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/6583fd25f2.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="container">
+
+  <div id="root" class="mt-5" @keyup.right="gotoNextSection" @keyup.left="gotoPreviousSection" tabindex="0">
+
+    <h1 class="main-title display-3">
+      Source Control with <i class="fab fa-git-square"></i><span class="sr-only">Git</span>
+    </h1>
+
+    <nav class="nav nav-pills nav-justified mb-5">
+      <a v-for="(section, index) in sections" class="nav-item nav-link" href="#" :class="{ 'active': isCurrentSection(index) }" @click="setCurrentSection(index)">{{ section.getAttribute('aria-label') }}</a>
+    </nav>
+
+    <section aria-label="Home" v-show="isCurrentSection(0)">
+      <h1>by Wun Chiou</h1>
+      <h2><i class="fas fa-chair-office"></i> Office of Research Information Systems</h2>
+      <h2><i class="fas fa-envelope"></i> <a href="mailto:wun@utdallas.edu">wun@utdallas.edu</a></h2>
+    </section>
+
+    <section aria-label="Intro" v-show="isCurrentSection(1)">
+      <div class="jumbotron" style="background-image: url(https://media.giphy.com/media/kI2hsMDS4zjK7Fbif8/source.gif);">
+        <section-title>Control the <strike class="text-muted">Force</strike> Source</section-title>
+        <h1 class="mt-5">
+          <ul class="fa-ul hover-highlight">
+            <li><span class="fa-li"><i class="fad fa-search"></i></span>Track Code Changes</li>
+            <li><span class="fa-li"><i class="fad fa-undo"></i></span>Undo Mistakes</li>
+            <li><span class="fa-li"><i class="fad fa-shield-check"></i></span>Backup</li>
+            <li><span class="fa-li"><i class="fad fa-flask"></i></span>Experiment Safely</li>
+            <li><span class="fa-li"><i class="fad fa-handshake-alt"></i></span>Collaborate</li>
+          </ul>
+        </h1>
+      </div>
+    </section>
+
+    <section aria-label="Create" v-show="isCurrentSection(2)">
+      <section-title>Create a git repo</section-title>
+      <clippy title="Repository">
+        A repository (aka "repo") is where git keeps track of everything about your project. It's usually in a hidden ".git" folder.
+      </clippy>
+    </section>
+
+    <section aria-label="Change" v-show="isCurrentSection(3)">
+      <section-title>Make a simple change</section-title>
+      <clippy title="Staging">
+        A staged file is ready to be added to the project history.
+      </clippy>
+      <clippy title="Commit">
+        A commit is a group of changes saved to a project history.
+        <img src="images/commit.svg" alt="commit">
+      </clippy>
+    </section>
+
+    <section aria-label="Feature" v-show="isCurrentSection(4)">
+      <section-title>Work on a new feature</section-title>
+      <clippy title="Branch">
+        In git, a branch is just a pointer to the tip of a set of commits.
+        <img src="images/branch.png" alt="branch">
+      </clippy>
+      <clippy title="Merge">
+        Merging one branch into another consolidates changes.
+        <img src="images/merge.png" alt="branch">
+      </clippy>
+    </section>
+
+    <section aria-label="Collaborate" v-show="isCurrentSection(5)">
+      <section-title>Let someone else contribute</section-title>
+      <clippy title="Remotes">
+        You can connect your git repo to another remote repo.
+        <img src="images/remote.svg" alt="branch">
+      </clippy>
+      <clippy title="Push / Pull">
+        Transfer your local changes to/from a remote repo with a <strong>push</strong>.
+      </clippy>
+      <clippy title="Merge Conflict">
+        When changes from one branch conflict with changes from another (either remote or local).
+      </clippy>
+    </section>
+
+    <section aria-label="Flow" v-show="isCurrentSection(6)">
+      <section-title>Collaboration workflows</section-title>
+      <div class="not-clippy-text mt-5">
+        <img src="images/flow.svg" alt="git flow">
+      </div>
+    </section>
+
+    <section aria-label="More" v-show="isCurrentSection(7)">
+      <div class="jumbotron" style="background-image: url(https://media.giphy.com/media/dyjI5yohwpym4qalW2/source.gif);">
+        <section-title>References and More Resources</section-title>
+        <div class="mt-5 ml-5">
+          <reference icon="fab fa-git-square" link="https://git-scm.com">
+            Official Git Site
+          </reference>
+          <reference icon="fab fa-atlassian" link="https://www.atlassian.com/git/tutorials/what-is-version-control">
+            Atlassian Git Tutorials
+          </reference>
+          <reference icon="fab fa-github-square" link="https://guides.github.com/introduction/flow">
+            Github Flow
+          </reference>
+          <reference icon="fab fa-vuejs" link="https://vuejs.org">
+            Vue.js
+          </reference>
+          </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+  <script>
+    Vue.config.devtools = true;
+  </script>
+  <script src="components.js"></script>
+  <script src="app.js"></script>
+
+</body>
+
+</html>
