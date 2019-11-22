@@ -17,7 +17,7 @@ Vue.component('clippy', {
         <h2>{{ title }}</h2>
         <slot></slot>
       </div>
-      <img class="clippy-image" src="${avatars.clippy}">
+      <img class="clippy-image" src="${avatars.baby_yoda}">
     </div>
   `,
 });
